@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>20200221数据结构与算法</title>
+      <link href="/2020/02/29/20200221%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/"/>
+      <url>/2020/02/29/20200221%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数据结构与算法训练营"><a href="#数据结构与算法训练营" class="headerlink" title="数据结构与算法训练营"></a>数据结构与算法训练营</h2><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><ul><li>可以练习，每道题起码过五遍</li><li>练习缺项，弱项的地方</li><li>不舒服，不爽，枯燥</li><li>把它变成你的舒适区</li><li>主动型反馈，看别人的代码</li></ul><h3 id="2-切题四件套"><a href="#2-切题四件套" class="headerlink" title="2. 切题四件套"></a>2. 切题四件套</h3><ul><li><ol><li>理解清题意</li></ol></li><li><ol start="2"><li>把所有可能的想法过一遍</li></ol></li><li><ol start="3"><li>写代码</li></ol></li><li><ol start="4"><li>测试用例</li></ol></li></ul><h3 id="3-刷题方法"><a href="#3-刷题方法" class="headerlink" title="3.刷题方法"></a>3.刷题方法</h3><ul><li>第一遍，五分钟思考看题，看答案，分析优劣，并记忆</li><li>第二遍，自己写，对比执行时间与</li><li>第三遍，24小时后再重复练习</li><li>第四遍，一周后，再重复练习</li><li>第五遍，面试前再刷一遍</li></ul><h3 id="操作小技巧"><a href="#操作小技巧" class="headerlink" title="操作小技巧"></a>操作小技巧</h3><ul><li>fn + delete 删除右边</li><li>home 跳到行头</li><li>end 跳到行尾</li><li>ctrl 单词切分</li><li>Ctrl + delete 删除整个单词</li><li>shift 加方向键 选取</li></ul><h3 id="IDE的使用top-tips"><a href="#IDE的使用top-tips" class="headerlink" title="IDE的使用top tips"></a>IDE的使用top tips</h3><ul><li>工欲善其事,必先利其器</li><li>刻意化练习</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据结构与算法 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2020/02/20/hello-world/"/>
       <url>/2020/02/20/hello-world/</url>
