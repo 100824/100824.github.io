@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>python处理excel文件</title>
+      <link href="/2020/03/04/python%E5%A4%84%E7%90%86excel%E6%96%87%E4%BB%B6/"/>
+      <url>/2020/03/04/python%E5%A4%84%E7%90%86excel%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="python处理excel文件"><a href="#python处理excel文件" class="headerlink" title="python处理excel文件"></a>python处理excel文件</h2><p><strong>起因</strong>：女朋友在手动处理excel文件，说她处理得好烦。我就看了一下需求，。发现可以用python来处理。<br><strong>需求</strong>：一个excel表格，只有一列的内容，每隔五行为一道选择题，需要把每道题都拎出来成为独立一行。放入到一个新的表格中。<br><strong>格式</strong>：<br>输入表</p><table><thead><tr><th>A1</th></tr></thead><tbody><tr><td>A2</td></tr><tr><td>A3</td></tr><tr><td>A4</td></tr><tr><td>A5</td></tr><tr><td>B1</td></tr><tr><td>B2</td></tr><tr><td>B3</td></tr><tr><td>B4</td></tr><tr><td>B5</td></tr></tbody></table><p>输出表</p><table><thead><tr><th>A1</th><th align="center">A2</th><th align="center">A3</th><th align="center">A4</th><th align="center">A5</th></tr></thead><tbody><tr><td>B1</td><td align="center">B2</td><td align="center">B3</td><td align="center">B4</td><td align="center">B5</td></tr></tbody></table><p><strong>代码</strong>：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#!coding:utf8</span><br><span class="line">import xlrd    #读取模块</span><br><span class="line">import openpyxl  #写入模块</span><br><span class="line"></span><br><span class="line"># 设置好输入和输出文件</span><br><span class="line">f1 &#x3D; xlrd.open_workbook(r&#39;C:\Users\53517\Desktop\人工智能导论题库 (100题).xlsx&#39;)</span><br><span class="line">sheet1 &#x3D; f1.sheet_by_index(1)  #读取excel表格中的第一个表格</span><br><span class="line">num &#x3D; sheet1.col_values(1)  #第一个表格中的第一列</span><br><span class="line"></span><br><span class="line">workbook &#x3D; openpyxl.Workbook()  #临时存储对象</span><br><span class="line">sheet &#x3D; workbook.active</span><br><span class="line">sheet.title &#x3D; &#39;test&#39;  #新生成表的名字</span><br><span class="line">long &#x3D; len(num)     #总行数</span><br><span class="line">print(long)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">k &#x3D; 0</span><br><span class="line">for i in range(0, long&#x2F;5):</span><br><span class="line">    for j in range(0, 5):</span><br><span class="line">        sheet.cell(row&#x3D;i + 1, column&#x3D;j + 1, value&#x3D;str(num[k]))</span><br><span class="line">        k +&#x3D; 1</span><br><span class="line">workbook.save(r&#39;C:\Users\53517\Desktop\output1.xlsx&#39;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构与算法01</title>
       <link href="/2020/02/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9501/"/>
       <url>/2020/02/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9501/</url>
