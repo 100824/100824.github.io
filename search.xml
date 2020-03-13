@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>VScode上手教程</title>
+      <link href="/2020/03/14/VScode%E4%B8%8A%E6%89%8B%E6%95%99%E7%A8%8B/"/>
+      <url>/2020/03/14/VScode%E4%B8%8A%E6%89%8B%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="vscode上手教程"><a href="#vscode上手教程" class="headerlink" title="vscode上手教程"></a>vscode上手教程</h2><p>由于电脑太多个软件，pycharm，goland，sublime，还有对markdowm的支持不是很友好，所以决定上手传说中强大的vscode  </p><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>直接从官网下载即可<br><a href="https://code.visualstudio.com" target="_blank" rel="noopener">https://code.visualstudio.com</a></p><h3 id="汉化"><a href="#汉化" class="headerlink" title="汉化"></a>汉化</h3><p>为了方便熟悉软件，先使用了汉化版，直接在插件搜索chinese，点击install之后重启，就OK了</p><h3 id="接入linux子系统"><a href="#接入linux子系统" class="headerlink" title="接入linux子系统"></a>接入linux子系统</h3><p>打开后提示我可以安装一个插件，用于直接打开及编辑linux子系统的文件（非常方便），于是就按着提示下载了（remote-WLS）。试了一下，的确非常方便，可以直接打开linux的整个工作目录，而且也能直接运行命令行的命令。</p><h3 id="搭建运行环境"><a href="#搭建运行环境" class="headerlink" title="搭建运行环境"></a>搭建运行环境</h3><p>万能语言运行环境 （Code Runner），安装这个插件，然后打开某个.py文件，ctrl+shift+N即可运行，非常方便</p><h3 id="搭建python环境"><a href="#搭建python环境" class="headerlink" title="搭建python环境"></a>搭建python环境</h3><p>第一次打开.py文件会提示你安装python的插件，按提示安装后就可以调试代码了（前提是电脑已经安装了python）</p><h3 id="远程开发工具"><a href="#远程开发工具" class="headerlink" title="远程开发工具"></a>远程开发工具</h3><p>插件Remote Development，通过SSH(Secure Shell)的方式连接到远程服务器，开发很方便，先记着，以后会用到。</p><h3 id="markdowm插件"><a href="#markdowm插件" class="headerlink" title="markdowm插件"></a>markdowm插件</h3><p>Markdown Preview Enhanced，预览的界面得到优化<br>Markdown PDF 可以直接导出pdf  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据结构与算法02</title>
       <link href="/2020/03/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9502/"/>
       <url>/2020/03/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9502/</url>
