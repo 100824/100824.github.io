@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>python处理excel文件 | 丑丑与大头的博客</title>
+  <title>前端学习路线（小A） | 丑丑与大头的博客</title>
   
   
 
@@ -225,8 +225,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/03/04/python%E5%A4%84%E7%90%86excel%E6%96%87%E4%BB%B6/">
-        python处理excel文件
+      <a href="/2020/03/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%EF%BC%88%E5%B0%8FA%EF%BC%89/">
+        前端学习路线（小A）
       </a>
     </h1>
   
@@ -257,7 +257,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-03-04</p>
+    <p>2020-03-21</p>
   </a>
 </div>
 
@@ -265,14 +265,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/python/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>python</p>
-    </a>
-  </div>
-
 
           
         
@@ -315,64 +307,74 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <h2 id="python处理excel文件"><a href="#python处理excel文件" class="headerlink" title="python处理excel文件"></a>python处理excel文件</h2><p><strong>起因</strong>：女朋友在手动处理excel文件，说她处理得好烦。我就看了一下需求，。发现可以用python来处理。<br><strong>需求</strong>：一个excel表格，只有一列的内容，每隔五行为一道选择题，需要把每道题都拎出来成为独立一行。放入到一个新的表格中。<br><strong>格式</strong>：<br>输入表</p>
-<table>
-<thead>
-<tr>
-<th>A1</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>A2</td>
-</tr>
-<tr>
-<td>A3</td>
-</tr>
-<tr>
-<td>A4</td>
-</tr>
-<tr>
-<td>A5</td>
-</tr>
-<tr>
-<td>B1</td>
-</tr>
-<tr>
-<td>B2</td>
-</tr>
-<tr>
-<td>B3</td>
-</tr>
-<tr>
-<td>B4</td>
-</tr>
-<tr>
-<td>B5</td>
-</tr>
-</tbody></table>
-<p>输出表</p>
-<table>
-<thead>
-<tr>
-<th>A1</th>
-<th align="center">A2</th>
-<th align="center">A3</th>
-<th align="center">A4</th>
-<th align="center">A5</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>B1</td>
-<td align="center">B2</td>
-<td align="center">B3</td>
-<td align="center">B4</td>
-<td align="center">B5</td>
-</tr>
-</tbody></table>
-<p><strong>代码</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#!coding:utf8</span><br><span class="line">import xlrd    #读取模块</span><br><span class="line">import openpyxl  #写入模块</span><br><span class="line"></span><br><span class="line"># 设置好输入和输出文件</span><br><span class="line">f1 &#x3D; xlrd.open_workbook(r&#39;C:\Users\53517\Desktop\人工智能导论题库 (100题).xlsx&#39;)</span><br><span class="line">sheet1 &#x3D; f1.sheet_by_index(1)  #读取excel表格中的第一个表格</span><br><span class="line">num &#x3D; sheet1.col_values(1)  #第一个表格中的第一列</span><br><span class="line"></span><br><span class="line">workbook &#x3D; openpyxl.Workbook()  #临时存储对象</span><br><span class="line">sheet &#x3D; workbook.active</span><br><span class="line">sheet.title &#x3D; &#39;test&#39;  #新生成表的名字</span><br><span class="line">long &#x3D; len(num)     #总行数</span><br><span class="line">print(long)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">k &#x3D; 0</span><br><span class="line">for i in range(0, long&#x2F;5):</span><br><span class="line">    for j in range(0, 5):</span><br><span class="line">        sheet.cell(row&#x3D;i + 1, column&#x3D;j + 1, value&#x3D;str(num[k]))</span><br><span class="line">        k +&#x3D; 1</span><br><span class="line">workbook.save(r&#39;C:\Users\53517\Desktop\output1.xlsx&#39;)</span><br></pre></td></tr></table></figure>
-
-
+          <h2 id="什么是Web前端？"><a href="#什么是Web前端？" class="headerlink" title="什么是Web前端？"></a>什么是Web前端？</h2><p>Web前端是互联网时代软件产品研发中不可缺少的角色。从广义上来讲，所有用户终端产品与视觉和交互有关的部分，都属于前端工程师的专业领域。</p>
+<p>从狭义上讲，Web前端就是使用HTML、CSS、Java等专业技能和工具将产品的UI设计稿实现成网站产品，涵盖用户PC端、移动端等网页，处理视觉和交互问题。</p>
+<p>在Web前端这个岗位兴起之前，html+css的工作是被视觉人员所承担的，而js这部分则是由后端完成的。随着智能手机和移动互联网的普及，PC端、手机端、mobile端等五花八门的应用占领着每个人的手机，随之而来各种定制化的UI风格让兼容问题变得越来越头疼。因此，有企业开始把html+css+js这部分工作独立出来，由一个新的岗位来处理，成为了一个处理视觉和交互的综合岗位，这才有了Web前端这个岗位的出现。</p>
+<p>因此，Web前端开发行业是伴随Web兴起而细分出来的行业。实际上，Web前端是最接近产品和设计的工程师，起到衔接产品和技术的作用，它存在在互联网的每个角落，我们使用的微信里面的各种功能、小程序等都离不开web前端技术。</p>
+<h2 id="Web前端的前景和就业形势、薪酬如何？"><a href="#Web前端的前景和就业形势、薪酬如何？" class="headerlink" title="Web前端的前景和就业形势、薪酬如何？"></a>Web前端的前景和就业形势、薪酬如何？</h2><p>学习Web前端的就业面很广，选择的岗位有：前端开发工程师、资深前端开发工程师、网站重构工程师、前端架构师等等。</p>
+<p>虽然近两年大数据、人工智能等很火，但Web前端开发依然是十分热门的，特别是随着谷歌、YouTube、FireFox等大型企业纷纷将视线转向HTML5，前端开发已经进入HTML5时代，所以，Web前端在今后十年仍有很大的发展空间。</p>
+<p>据统计，我国HTML5前端工程师人员的缺口将达到10多万，因此，Web前端工程师是一个非常有“钱”途的职业，并且薪酬会根据技能的深入而有不同程度的增长，其中北京、上海、广州、深圳等地前端工程师的薪资待遇更是一路飙升。</p>
+<p>就目前的广州来说，Web前端新手的月薪大概5000元左右；工作经验3年以上、有代表性作品的，月薪在一万元左右；高手级别的月薪两三万元不成问题；大师级别的会更高。<br><img src="https://pic3.zhimg.com/80/v2-f015ec98793b5375823035ac566d139a_hd.jpg" alt="image"></p>
+<p><img src="https://pic3.zhimg.com/80/v2-f05fb27927cfbfda7cd1e2c26c227a6e_hd.jpg" alt="image"></p>
+<h3 id="2-大量的行业内技术不精的人造成市场饱和的假象"><a href="#2-大量的行业内技术不精的人造成市场饱和的假象" class="headerlink" title="2.大量的行业内技术不精的人造成市场饱和的假象"></a>2.大量的行业内技术不精的人造成市场饱和的假象</h3><p>前端入门学习门槛比较低，所以很多人认为HTML、CSS、JavaScript是很简单就掌握的东西，以为在网上看点乱七八糟的教程，随便看看书，用HTML、CSS做个网页布局就可以入门了。如果真是这样，那基本每个人只要花点时间，随便学一下，就可以入行前端了，就可以称为前端开发工程师了，那还得了。</p>
+<p>现在很多人就是这样，想着软件开发行业可以拿高薪，想快速入门做开发，这种想法其实没有错。但是只看一点点基础，随便学点东西，只会一点点皮毛就不再深入拓展，这样的技术水平，就算数量再多，市场对专业的前端开发需求依然是只增不减，不会有任何影响的。</p>
+<p>大家可以直接去看市场数据：<br><img src="https://pic1.zhimg.com/80/v2-3200273b2321981e44db86da3833f778_hd.jpg" alt="image"></p>
+<h3 id="那么前端开发工程师的未来路在何方？"><a href="#那么前端开发工程师的未来路在何方？" class="headerlink" title="那么前端开发工程师的未来路在何方？"></a>那么前端开发工程师的未来路在何方？</h3><p>随着前端开发技术发展，移动端应用、小程序、H5游戏出现。前端开发应用场景不断拓展。走向更专业和工程化的发展。</p>
+<p>在以后，互联网的大量工作将会需要前端开发来完成：</p>
+<p>播放器/游戏：H5代替Flash，如Web Audio、Web Video、Canvas<br>日常办公软件（复杂应用，并且慢慢从桌面程序演化为Web）：Office、Email、文档管理、产品设计、项目管理、代码编辑器<br>大数据/AI配套软件（复杂应用，并且慢慢从桌面程序演化为Web）：需要大量的后台系统来做数据分析/机器学习<br>容器/小程序：支付宝/微信/钉钉容器，各种行业功能小程序（拥有大量原生APP功能的APP成为互联网新趋势）<br>产品信息展示类网站（炫酷应用）：各种智能设备官网、大企业官网</p>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><h3 id="编译器"><a href="#编译器" class="headerlink" title="编译器"></a>编译器</h3><p>每种方向使用的编译器都不一致，选择好的编译器就选择了好的起步，在这里推荐VS code编译器，快捷健十分广泛，打码十分方便。同时代码风格要注重，杂乱无章的代码要整理简洁、舒适 好看。</p>
+<p><a href="https://www.jianshu.com/p/11554732b323" target="_blank" rel="noopener">VS code的使用</a></p>
+<h3 id="代码托管"><a href="#代码托管" class="headerlink" title="代码托管"></a>代码托管</h3><p>每一次更改代码都可能会导致代码增删除改的错误出现，代码托管可以防止出现这种错误。在这里推荐使用git码云的代码托管。当然还可以适当了解github、SVN等托管方式（原理一致）。多人开发的话也可以使用码云。以下为廖雪峰的git教程。</p>
+<p><a href="https://www.liaoxuefeng.com/wiki/896043488029600" target="_blank" rel="noopener">git学习</a></p>
+<h2 id="小A前端学习路线"><a href="#小A前端学习路线" class="headerlink" title="小A前端学习路线"></a>小A前端学习路线</h2><p>首先，无论学任何一个技术，都是从零基础开始的，前端开发也是一样。做软件开发，是从事编程开发工作，必须先从语法基础开始学习，通过语法组成产品效果。</p>
+<p>前端开发的基础语法，由HTML+CSS+JavaScript组成，这是前端开发<strong>最基本</strong>的3个语言。</p>
+<h4 id="HTML-CSS-JS基础"><a href="#HTML-CSS-JS基础" class="headerlink" title="HTML+CSS+JS基础"></a>HTML+CSS+JS基础</h4><ul>
+<li><p><strong>HTML+CSS</strong></p>
+<p>HTML进阶、CSS进阶、div+css布局、HTML+css整站开发。</p>
+</li>
+<li><p><strong>JavaScript基础</strong></p>
+<p>理解面向对象编程、Js基础教程、js内置对象常用方法、常见DOM树操作大全、ECMAscript、DOM、BOM、定时器和焦点图。</p>
+</li>
+<li><p><strong>JQuery：基础使用</strong></p>
+<p>悬着器、DOM操作、特效和动画、方法链、拖拽、变形、JQueryUI组件基本使用。</p>
+</li>
+</ul>
+<h4 id="HTML-CSS-JS进阶"><a href="#HTML-CSS-JS进阶" class="headerlink" title="HTML+CSS+JS进阶"></a>HTML+CSS+JS进阶</h4><ul>
+<li><p><strong>JS高级特征</strong></p>
+<p>正则表达式、排序算法、递归算法、闭包、函数节流、作用域链、基于距离运动框架、面向对象基础。</p>
+</li>
+<li><p><strong>HTML5：</strong></p>
+<p>HTML5新语义标签、HTML5表单、音频和视频、离线和本地存储</p>
+</li>
+<li><p><strong>CSS3：</strong></p>
+<p>CSS3新选择器、伪元素、脸色表示法、边框、阴影、background系列属性改变、Transition、动画、景深和深透、3D效果制作、元素进场、出场策略、炫酷CSS3网页制作。</p>
+</li>
+</ul>
+<h4 id="HTTP服务和AJAX编程"><a href="#HTTP服务和AJAX编程" class="headerlink" title="HTTP服务和AJAX编程"></a>HTTP服务和AJAX编程</h4><ul>
+<li><p><strong>AJAX上篇：</strong></p>
+<p>Ajax简介和异步的概念、Ajax框架的封装、XMLHttpRequest对象详细介绍方法、兼容性处理方法、Ajax框架的封装、Ajax中缓存问题、XML介绍和使用</p>
+</li>
+<li><p><strong>AJAX下篇：</strong></p>
+<p>JSON和JSON解析、数据绑定和模板技术、JSONP、跨域技术、图片预读取和lazy-load技术、jQuery框架中的AjaxAPI。</p>
+</li>
+</ul>
+<h3 id="学习资料推荐"><a href="#学习资料推荐" class="headerlink" title="学习资料推荐"></a>学习资料推荐</h3><ul>
+<li>W3school</li>
+<li>菜鸟教程</li>
+<li>《Head FirstHTML与CSS（第二版）》</li>
+<li>《css权威指南》</li>
+<li>《css世界》</li>
+<li>《dom编程艺术》</li>
+<li>《Javascript高级程序设计》</li>
+<li>《锋利的jQuery》</li>
+<li>《Javascript权威指南》</li>
+<li>廖雪峰JS：<a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023020745357888" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/1022910821149312/1023020745357888</a> </li>
+</ul>
+<h5 id="视频资料"><a href="#视频资料" class="headerlink" title="视频资料"></a>视频资料</h5><p>网易云课堂：</p>
+<p>web前端开发JavaScript精英课js：</p>
+<p><a href="https://study.163.com/course/introduction.htm?courseId=1004170004&amp;_trace_c_p_k2_=94371ee5856048719b8508f46f1c9842" target="_blank" rel="noopener">https://study.163.com/course/introduction.htm?courseId=1004170004&amp;_trace_c_p_k2_=94371ee5856048719b8508f46f1c9842</a></p>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>无论是学习前端还是学习其他的知识，一定要注意实践、实践、实践！知识可以先从官方文档获取，解决方法也可以上csdn、简书、博客园上搜索别人的解决的坑，但是不实践，不做项目就一定不会进步并且学习到不同的知识。</p>
+<p>在此建议小盆友们可以写写csdn博客，总结每一个项目收获的东西知识。每一次学习的总结都会是一次豁然开朗的体会。</p>
 
           
             <br>
@@ -388,10 +390,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-04T02:03:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-03-21T17:22:34+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年3月4日</p>
+    <p>更新于 2020年3月21日</p>
   </a>
 </div>
 
@@ -410,7 +412,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/04/python%E5%A4%84%E7%90%86excel%E6%96%87%E4%BB%B6/&title=python处理excel文件 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/03/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%EF%BC%88%E5%B0%8FA%EF%BC%89/&title=前端学习路线（小A） | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
           
           >
           
@@ -422,7 +424,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/03/04/python%E5%A4%84%E7%90%86excel%E6%96%87%E4%BB%B6/&title=python处理excel文件 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/03/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%EF%BC%88%E5%B0%8FA%EF%BC%89/&title=前端学习路线（小A） | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
           
           >
           
@@ -434,7 +436,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/04/python%E5%A4%84%E7%90%86excel%E6%96%87%E4%BB%B6/&title=python处理excel文件 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/03/21/%E5%89%8D%E7%AB%AF%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF%EF%BC%88%E5%B0%8FA%EF%BC%89/&title=前端学习路线（小A） | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
           
           >
           
@@ -462,9 +464,9 @@
                         <span class="art-item-left">
                             <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
                             <h4>
-                                <a href="/2020/03/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9502/" rel="prev" title="数据结构与算法02">
+                                <a href="/2020/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/" rel="prev" title="浏览器插件">
                                   
-                                      数据结构与算法02
+                                      浏览器插件
                                   
                                 </a>
                             </h4>
@@ -477,9 +479,9 @@
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2020/02/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%9501/" rel="prev" title="数据结构与算法01">
+                                <a href="/2020/03/21/git%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="git的使用">
                                     
-                                        数据结构与算法01
+                                        git的使用
                                     
                                 </a>
                             </h4>
@@ -512,7 +514,7 @@
 
   <script>
     window.subData = {
-      title: 'python处理excel文件',
+      title: '前端学习路线（小A）',
       tools: true
     }
   </script>
@@ -551,7 +553,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#python处理excel文件"><span class="toc-text">python处理excel文件</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是Web前端？"><span class="toc-text">什么是Web前端？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Web前端的前景和就业形势、薪酬如何？"><span class="toc-text">Web前端的前景和就业形势、薪酬如何？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-大量的行业内技术不精的人造成市场饱和的假象"><span class="toc-text">2.大量的行业内技术不精的人造成市场饱和的假象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#那么前端开发工程师的未来路在何方？"><span class="toc-text">那么前端开发工程师的未来路在何方？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开发环境"><span class="toc-text">开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#编译器"><span class="toc-text">编译器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码托管"><span class="toc-text">代码托管</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小A前端学习路线"><span class="toc-text">小A前端学习路线</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML-CSS-JS基础"><span class="toc-text">HTML+CSS+JS基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML-CSS-JS进阶"><span class="toc-text">HTML+CSS+JS进阶</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTTP服务和AJAX编程"><span class="toc-text">HTTP服务和AJAX编程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#学习资料推荐"><span class="toc-text">学习资料推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#视频资料"><span class="toc-text">视频资料</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tips"><span class="toc-text">tips</span></a></li></ol>
     </div>
   </section>
 
