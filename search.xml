@@ -8,7 +8,7 @@
       <link href="/2020/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
       <url>/2020/03/22/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/</url>
       
-        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之所以说是浏览器插件而不是Chrome插件是因为我本来想要使用chrome的插件功能，但是之前一直都是在用360极速浏览器，<br>上网查了一下，突然发现原来的浏览器添加插件也是非常方便，加上自己平时习惯了用360，就直接上手360浏览器的插件，<br>知乎简书等文章说google主要优势是快，其实我平时也没啥感觉原来的浏览器会慢。</p><h3 id="油猴"><a href="#油猴" class="headerlink" title="油猴"></a>油猴</h3><p>这个插件真的牛逼，用过才知道，直接在浏览器插件那里搜索tampermonkey，添加后即可使用<br><a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 这个地址是搜索油猴脚本的网站，免费看视频，百度云盘不限速，各种资源，浏览器快捷翻译等功能都能找到</p><h3 id="vimium"><a href="#vimium" class="headerlink" title="vimium"></a>vimium</h3><p>这个插件可以使你摆脱鼠标的束缚，网页上面的所有链接都可以用键盘打开，只需要按下f键，整个页面的链接就会变成字母，按下对应的字母就能跳转到相应链接（自己试试就知道了）</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之所以说是浏览器插件而不是Chrome插件是因为我本来想要使用chrome的插件功能，但是之前一直都是在用360极速浏览器，<br>上网查了一下，突然发现原来的浏览器添加插件也是非常方便，加上自己平时习惯了用360，就直接上手360浏览器的插件，<br>知乎简书等文章说google主要优势是快，其实我平时也没啥感觉原来的浏览器会慢。</p><h3 id="油猴"><a href="#油猴" class="headerlink" title="油猴"></a>油猴</h3><p>这个插件真的牛逼，用过才知道，直接在浏览器插件那里搜索tampermonkey，添加后即可使用<br><a href="https://greasyfork.org/zh-CN" target="_blank" rel="noopener">https://greasyfork.org/zh-CN</a> 这个地址是搜索油猴脚本的网站，免费看视频，百度云盘不限速，各种资源，浏览器快捷翻译等功能都能找到</p><h3 id="vimium"><a href="#vimium" class="headerlink" title="vimium"></a>vimium</h3><p>这个插件可以使你摆脱鼠标的束缚，网页上面的所有链接都可以用键盘打开，只需要按下f键，整个页面的链接就会变成字母，按下对应的字母就能跳转到相应链接（自己试试就知道了）<br>关闭网页/恢复网页 —— x/X<br>搜索 —— o<br>跳转标签页-J/K</p>]]></content>
       
       
       <categories>
@@ -40,7 +40,7 @@
       <link href="/2020/03/21/git%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
       <url>/2020/03/21/git%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
       
-        <content type="html"><![CDATA[<h3 id="git：分布式版本控制系统"><a href="#git：分布式版本控制系统" class="headerlink" title="git：分布式版本控制系统"></a>git：分布式版本控制系统</h3><p>安装：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure><p>创建版本库  </p><ol><li>先创建一个文件夹</li><li>git init</li></ol><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h3 id="git：分布式版本控制系统"><a href="#git：分布式版本控制系统" class="headerlink" title="git：分布式版本控制系统"></a>git：分布式版本控制系统</h3><p>安装：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git</span><br></pre></td></tr></table></figure><p>创建版本库  </p><ol><li>先创建一个文件夹</li><li>git init 初始化一个git仓库</li><li>Git add <file> 添加文件</li><li>Git commit -m ‘说明’  提交到仓库</li><li>Git status 检查仓库变动的状态</li><li>git diff readme.txt 检查某个文件具体修改了哪些内容</li><li>Git log 查看提交日志</li><li>Git reset –hard HEAD^ 退回上一个版本，HEAD表示当前版本，^表示上一个版本，^^表示上上个版本</li><li>跳回旧版本后想再跳回新的版本，需要在记录中找到版本的id号，Git reflog</li><li>git checkout – readme.txt 把readme.txt文件在工作区的修改全部撤销,变得跟仓库的一样</li><li>git reset命令既可以回退版本，也可以把暂存区的修改回退到工作区。当我们用HEAD时，表示最新的版本。</li><li>git rm test.txt 删除文件</li></ol>]]></content>
       
       
       <categories>
