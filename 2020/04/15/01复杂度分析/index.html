@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>60天重学算法01 | 丑丑与大头的博客</title>
+  <title>01复杂度分析 | 丑丑与大头的博客</title>
   
   
 
@@ -225,8 +225,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/04/14/00%E5%89%8D%E8%A8%80/">
-        60天重学算法01
+      <a href="/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/">
+        01复杂度分析
       </a>
     </h1>
   
@@ -257,7 +257,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-04-14</p>
+    <p>2020-04-15</p>
   </a>
 </div>
 
@@ -265,14 +265,6 @@
         
           
             
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/60%E5%A4%A9%E9%87%8D%E5%AD%A6%E7%AE%97%E6%B3%95/' rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>60天重学算法</p>
-    </a>
-  </div>
-
 
           
         
@@ -315,49 +307,52 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <h4 id="为什么要学数据结构与算法"><a href="#为什么要学数据结构与算法" class="headerlink" title="为什么要学数据结构与算法"></a>为什么要学数据结构与算法</h4><ul>
-<li>如果在一家成熟的公司，面对的是千万级甚至是亿级的用户，开发的是TB、PB级别数据处理系统性能几乎是开发过程中时刻都要考虑的问题。一个简单的ArrayList、Linked List的选择问题，就可能会产生成千上万倍的性能差别。这个时候，数据结构和算法的意义就完全凸显出来了。</li>
-<li>遇到不会的上 Google，懒了就上 GitHub 找框架。所以写了这么多年代码，一直是个菜鸟。</li>
+          <h4 id="为什么需要复杂度分析"><a href="#为什么需要复杂度分析" class="headerlink" title="为什么需要复杂度分析"></a>为什么需要复杂度分析</h4><ul>
+<li>执行效率是算法一个非常重要的考量指标，是通过复杂度来衡量的。</li>
+<li>复杂度分析是整个算法学习的精髓，只要掌握了它，数据结构和算法的内容基本上就掌握了一半。</li>
 </ul>
-<h4 id="知识图谱"><a href="#知识图谱" class="headerlink" title="知识图谱"></a>知识图谱</h4><p><img src="https://static001.geekbang.org/resource/image/91/a7/913e0ababe43a2d57267df5c5f0832a7.jpg" alt=""><br><br>需要掌握：  </p>
-<h4 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h4><ul>
-<li>10 个数据结构：数组、链表、栈、队列、散列表、二叉树、堆、跳表、图、Trie 树；  </li>
-<li>10 个算法：递归、排序、二分查找、搜索、哈希算法、贪心算法、分治算法、回溯算法、动态规划、字符串匹配算法。 </li>
-<li>每个知识点都用python实现一遍，第二遍尝试用go再实现一遍。</li>
-</ul>
-<h4 id="练习方法"><a href="#练习方法" class="headerlink" title="练习方法"></a>练习方法</h4><h5 id="1-须知"><a href="#1-须知" class="headerlink" title="1. 须知"></a>1. 须知</h5><ul>
-<li>可以练习，每道题起码过五遍</li>
-<li>练习缺项，弱项的地方</li>
-<li>不舒服，不爽，枯燥</li>
-<li>把它变成你的舒适区</li>
-<li>主动型反馈，看别人的代码</li>
-<li>看十遍也没自己实现一遍学的牢</li>
-</ul>
-<h5 id="2-切题四件套"><a href="#2-切题四件套" class="headerlink" title="2. 切题四件套"></a>2. 切题四件套</h5><ul>
-<li><ol>
-<li>理解清题意</li>
-</ol>
+<h4 id="大-O-复杂度表示法"><a href="#大-O-复杂度表示法" class="headerlink" title="大 O 复杂度表示法"></a>大 O 复杂度表示法</h4><ul>
+<li><p>表示代码执行时间随数据规模增长的变化趋势，所以，也叫作时间复杂度。</p>
 </li>
-<li><ol start="2">
-<li>把所有可能的想法过一遍</li>
-</ol>
-</li>
-<li><ol start="3">
-<li>写代码</li>
-</ol>
-</li>
-<li><ol start="4">
-<li>测试用例</li>
-</ol>
+<li><p>大 O 这种复杂度表示方法只是表示一种变化趋势。我们通常会忽略掉公式中的常量、低阶、系数，只需要记录一个最大阶的量级就可以了。所以，我们在分析一个算法、一段代码的时间复杂度的时候，也只关注循环执行次数最多的那一段代码就可以了。这段核心代码执行次数的 n 的量级，就是整段要分析代码的时间复杂度。</p>
+<h5 id="1-只关注循环执行次数最多的一段代码"><a href="#1-只关注循环执行次数最多的一段代码" class="headerlink" title="1. 只关注循环执行次数最多的一段代码"></a>1. 只关注循环执行次数最多的一段代码</h5></li>
+<li><p>大O这种复杂度表示方法只是表示一种变化趋势。我们通常会忽略掉公式中的常量、低阶、系数，只需要记录一个最大阶的量级就可以了。<strong>我们在分析一个算法、一段代码的时间复杂度的时候，也只关注循环执行次数最多的那一段代码就可以了</strong>。这段核心代码执行次数的n的量级，就是整段要分析代码的时间复杂度。</p>
 </li>
 </ul>
-<h5 id="3-刷题方法"><a href="#3-刷题方法" class="headerlink" title="3.刷题方法"></a>3.刷题方法</h5><ul>
-<li>第一遍，五分钟思考看题，看答案，分析优劣，并记忆</li>
-<li>第二遍，自己写，对比执行时间与</li>
-<li>第三遍，24小时后再重复练习</li>
-<li>第四遍，一周后，再重复练习</li>
-<li>第五遍，面试前再刷一遍</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">int cal(int n) &#123;</span><br><span class="line">   int sum &#x3D; 0;</span><br><span class="line">   int i &#x3D; 1;</span><br><span class="line">   for (; i &lt;&#x3D; n; ++i) &#123;</span><br><span class="line">     sum &#x3D; sum + i;</span><br><span class="line">   &#125;</span><br><span class="line">   return sum;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>其中第2、3行代码都是常量级的执行时间，与n的大小无关，所以对于复杂度并没有影响。循环执行次数最多的是第4、5行代码，所以这块代码要重点分析。这两行代码被执行了n次，所以总的时间复杂度就是O(n)。</li>
 </ul>
+<h5 id="2-加法法则：总复杂度等于量级最大的那段代码的复杂度"><a href="#2-加法法则：总复杂度等于量级最大的那段代码的复杂度" class="headerlink" title="2. 加法法则：总复杂度等于量级最大的那段代码的复杂度"></a>2. 加法法则：总复杂度等于量级最大的那段代码的复杂度</h5><ul>
+<li>总的时间复杂度就等于量级最大的那段代码的时间复杂度。</li>
+</ul>
+<h5 id="3-乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积"><a href="#3-乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积" class="headerlink" title="3. 乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积"></a>3. 乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积</h5><h4 id="常见时间复杂度"><a href="#常见时间复杂度" class="headerlink" title="常见时间复杂度"></a>常见时间复杂度</h4><ol>
+<li>O(1) 常量级，即不会随着n的大小改变而改变<br>只要代码的执行时间不随 n 的增大而增长，这样代码的时间复杂度我们都记作 O(1)</li>
+<li>O(logn)、O(nlogn)<br>log3n 就等于 log32 * log2n，所以 O(log3n) = O(C * log2n)，其中 C=log32 是一个常量。<br>所以，不管是以 2 为底、以 3 为底，还是以 10 为底，我们可以把所有对数阶的时间复杂度都记为 O(logn).<br>O(nlogn)就是前一种再加上乘法法则，再嵌套一层执行n遍。</li>
+<li>O(m+n)、O(m*n)<br>代码的复杂度由两个数据的规模来决定  </li>
+</ol>
+<h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p>算法的存储空间与数据规模之间的增长关系。<br>常见的空间复杂度就是 O(1)、O(n)、O(n2)，像 O(logn)、O(nlogn) 这样的对数阶复杂度平时都用不到。</p>
+<h4 id="最好、最坏时间复杂度"><a href="#最好、最坏时间复杂度" class="headerlink" title="最好、最坏时间复杂度"></a>最好、最坏时间复杂度</h4><ul>
+<li>最好情况时间复杂度就是，在最理想的情况下，执行这段代码的时间复杂度。就像我们刚刚讲到的，在最理想的情况下，要查找的变量 x 正好是数组的第一个元素，这个时候对应的时间复杂度就是最好情况时间复杂度。</li>
+<li>最坏情况时间复杂度就是，在最糟糕的情况下，执行这段代码的时间复杂度。就像刚举的那个例子，如果数组中没有要查找的变量 x，我们需要把整个数组都遍历一遍才行，所以这种最糟糕情况下对应的时间复杂度就是最坏情况时间复杂度。</li>
+</ul>
+<h4 id="平均情况时间复杂度"><a href="#平均情况时间复杂度" class="headerlink" title="平均情况时间复杂度"></a>平均情况时间复杂度</h4><ul>
+<li>通过加权平均值等方式，得出平均时间复杂度的公式，再通过大 O 标记法，省略掉系数、低阶、常量，把公式简化之后，就得到平均时间复杂度。 </li>
+</ul>
+<h4 id="均摊时间复杂度"><a href="#均摊时间复杂度" class="headerlink" title="均摊时间复杂度"></a>均摊时间复杂度</h4><ul>
+<li>对一个数据结构进行一组连续操作中，大部分情况下时间复杂度都很低，只有个别情况下时间复杂度比较高，而且这些操作之间存在前后连贯的时序关系，这个时候，我们就可以将这一组操作放在一块儿分析，看是否能将较高时间复杂度那次操作的耗时，平摊到其他那些时间复杂度比较低的操作上。而且，在能够应用均摊时间复杂度分析的场合，<strong>一般均摊时间复杂度就等于最好情况时间复杂度</strong>。</li>
+</ul>
+<h4 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a>课后思考</h4><p>我们今天学的几个复杂度分析方法，你都掌握了吗？你可以用今天学习的知识，来分析一下下面这个add()函数的时间复杂度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 全局变量，大小为10的数组array，长度len，下标i。</span><br><span class="line">int array[] &#x3D; new int[10]; </span><br><span class="line">int len &#x3D; 10;</span><br><span class="line">int i &#x3D; 0;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 往数组中添加一个元素</span><br><span class="line">void add(int element) &#123;</span><br><span class="line">   if (i &gt;&#x3D; len) &#123; &#x2F;&#x2F; 数组空间不够了</span><br><span class="line">     &#x2F;&#x2F; 重新申请一个2倍大小的数组空间</span><br><span class="line">     int new_array[] &#x3D; new int[len*2];</span><br><span class="line">     &#x2F;&#x2F; 把原来array数组中的数据依次copy到new_array</span><br><span class="line">     for (int j &#x3D; 0; j &lt; len; ++j) &#123;</span><br><span class="line">       new_array[j] &#x3D; array[j];</span><br><span class="line">     &#125;</span><br><span class="line">     &#x2F;&#x2F; new_array复制给array，array现在大小就是2倍len了</span><br><span class="line">     array &#x3D; new_array;</span><br><span class="line">     len &#x3D; 2 * len;</span><br><span class="line">   &#125;</span><br><span class="line">   &#x2F;&#x2F; 将element放到下标为i的位置，下标i加一</span><br><span class="line">   array[i] &#x3D; element;</span><br><span class="line">   ++i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>答：  </li>
+</ul>
+<ol>
+<li>最好时间复杂度O(1),只执行了写入操作</li>
+<li>最坏时间复杂度O(n),i&gt;=len,复制数组循环了n次</li>
+<li>平均时间复杂度O(1)， (1+1+…+1+n)/(n+1) = 2n/(n+1)，化简后为常数级</li>
+</ol>
 
           
             <br>
@@ -373,7 +368,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-15T01:05:54+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-15T01:44:02+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年4月15日</p>
@@ -395,7 +390,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/14/00%E5%89%8D%E8%A8%80/&title=60天重学算法01 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/&title=01复杂度分析 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
           
           >
           
@@ -407,7 +402,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/04/14/00%E5%89%8D%E8%A8%80/&title=60天重学算法01 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/&title=01复杂度分析 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
           
           >
           
@@ -419,7 +414,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/14/00%E5%89%8D%E8%A8%80/&title=60天重学算法01 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/&title=01复杂度分析 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
           
           >
           
@@ -443,28 +438,14 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/" rel="prev" title="01复杂度分析">
-                                  
-                                      01复杂度分析
-                                  
-                                </a>
-                            </h4>
-                            
-                        </span>
-                    </section>
-                
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2020/03/28/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8/" rel="prev" title="数组与链表">
+                                <a href="/2020/04/14/00%E5%89%8D%E8%A8%80/" rel="prev" title="60天重学算法01">
                                     
-                                        数组与链表
+                                        60天重学算法01
                                     
                                 </a>
                             </h4>
@@ -497,7 +478,7 @@
 
   <script>
     window.subData = {
-      title: '60天重学算法01',
+      title: '01复杂度分析',
       tools: true
     }
   </script>
@@ -536,7 +517,7 @@
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么要学数据结构与算法"><span class="toc-text">为什么要学数据结构与算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#知识图谱"><span class="toc-text">知识图谱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#目标"><span class="toc-text">目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#练习方法"><span class="toc-text">练习方法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-须知"><span class="toc-text">1. 须知</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-切题四件套"><span class="toc-text">2. 切题四件套</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-刷题方法"><span class="toc-text">3.刷题方法</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么需要复杂度分析"><span class="toc-text">为什么需要复杂度分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大-O-复杂度表示法"><span class="toc-text">大 O 复杂度表示法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-只关注循环执行次数最多的一段代码"><span class="toc-text">1. 只关注循环执行次数最多的一段代码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-加法法则：总复杂度等于量级最大的那段代码的复杂度"><span class="toc-text">2. 加法法则：总复杂度等于量级最大的那段代码的复杂度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积"><span class="toc-text">3. 乘法法则：嵌套代码的复杂度等于嵌套内外代码复杂度的乘积</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常见时间复杂度"><span class="toc-text">常见时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#空间复杂度"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#最好、最坏时间复杂度"><span class="toc-text">最好、最坏时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#平均情况时间复杂度"><span class="toc-text">平均情况时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#均摊时间复杂度"><span class="toc-text">均摊时间复杂度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#课后思考"><span class="toc-text">课后思考</span></a></li></ol>
     </div>
   </section>
 
