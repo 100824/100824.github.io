@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Category: hi | 丑丑与大头的博客</title>
+  <title>60天重学算法03 | 丑丑与大头的博客</title>
   
   
 
@@ -50,7 +50,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>丑丑与大头的博客</h1>
@@ -209,25 +209,12 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      
-<div class='l_main'>
+      <div class='l_main'>
   
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
+
   
+    <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -236,11 +223,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2020/02/20/hello-world/">
-      Hello World
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2020/04/16/02%E6%95%B0%E7%BB%84/">
+        60天重学算法03
+      </a>
+    </h1>
+  
 
 
       
@@ -268,7 +257,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2020-02-20</p>
+    <p>2020-04-16</p>
   </a>
 </div>
 
@@ -278,11 +267,29 @@
             
   
   <div class='new-meta-item category'>
-    <a href='/categories/hi/' rel="nofollow">
+    <a href='/categories/60%E5%A4%A9%E9%87%8D%E5%AD%A6%E7%AE%97%E6%B3%95/' rel="nofollow">
       <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>hi</p>
+      <p>60天重学算法</p>
     </a>
   </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
 
 
           
@@ -305,38 +312,160 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-        <div class="button readmore">
-          <a href="/2020/02/20/hello-world/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          <h4 id="数组如何实现随机访问"><a href="#数组如何实现随机访问" class="headerlink" title="数组如何实现随机访问"></a>数组如何实现随机访问</h4><ul>
+<li>第一是线性表,个线性表上的数据最多只有前和后两个方向,只是简单的前后关系</li>
+<li>第二个是连续的内存空间和相同类型的数据</li>
+<li>正是因为这两个限制，它才有了一个堪称“杀手锏”的特性：“随机访问”。但有利就有弊，这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。</li>
+</ul>
+<h4 id="为什么数组要从-0-开始编号，而不是从-1-开始呢？"><a href="#为什么数组要从-0-开始编号，而不是从-1-开始呢？" class="headerlink" title="为什么数组要从 0 开始编号，而不是从 1 开始呢？"></a>为什么数组要从 0 开始编号，而不是从 1 开始呢？</h4><p><img src="https://static001.geekbang.org/resource/image/98/c4/98df8e702b14096e7ee4a5141260cdc4.jpg" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[k]_address &#x3D; base_address + k * type_size</span><br><span class="line">a[k]_address &#x3D; base_address + (k-1)*type_size</span><br></pre></td></tr></table></figure>
+<p>对比两个公式，我们不难发现，从 1 开始编号，每次随机访问数组元素都多了一次减法运算，对于 CPU 来说，就是多了一次减法指令。数组作为非常基础的数据结构，通过下标随机访问数组元素又是其非常基础的编程操作，效率的优化就要尽可能做到极致。所以为了减少一次减法操作，数组选择了从 0 开始编号，而不是从 1 开始。</p>
+<h4 id="低效的“插入”和“删除”"><a href="#低效的“插入”和“删除”" class="headerlink" title="低效的“插入”和“删除”"></a>低效的“插入”和“删除”</h4><ul>
+<li>插入与删除的为O(n)</li>
+</ul>
+<h4 id="数组的访问越界问题"><a href="#数组的访问越界问题" class="headerlink" title="数组的访问越界问题"></a>数组的访问越界问题</h4><ul>
+<li>C语言中只要不是访问受限的内存，都可以自由访问，因此当数组越界时，系统不会报错，但是会访问到奇奇怪怪的数据，因为你不知道该地址存了什么数据。</li>
+<li>python，java等语言就会做越界检查，当数组越界直接报错。</li>
+</ul>
+<h4 id="容器能否完全替代数组"><a href="#容器能否完全替代数组" class="headerlink" title="容器能否完全替代数组"></a>容器能否完全替代数组</h4><ul>
+<li>对于业务开发，直接使用容器就足够了，省时省力。毕竟损耗一丢丢性能，完全不会影响到系统整体的性能。但如果你是做一些非常底层的开发，比如开发网络框架，性能的优化需要做到极致，这个时候数组就会优于容器，成为首选。</li>
+</ul>
+<h4 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a>课后思考</h4><ul>
+<li>二维数组的内存寻址公式是怎样的呢？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对于m*n的数组的addr[i][j](i&lt;m, j&lt;n)</span><br><span class="line">address &#x3D; base_address + (i * n + j) * type_size</span><br></pre></td></tr></table></figure></li>
+</ul>
 
-          </div>
+          
+            <br>
+            
+          
+        </div>
+        
+          <br>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-04-17T04:42:50+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2020年4月17日</p>
+  </a>
+</div>
+
         
       
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/04/16/02%E6%95%B0%E7%BB%84/&title=60天重学算法03 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/04/16/02%E6%95%B0%E7%BB%84/&title=60天重学算法03 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/04/16/02%E6%95%B0%E7%BB%84/&title=60天重学算法03 | 丑丑与大头的博客&pics=http://chuantu.xyz/t6/720/1582052135x989499252.jpg&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+            <div class="prev-next">
+                
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/" rel="prev" title="60天重学算法02">
+                                    
+                                        60天重学算法02
+                                    
+                                </a>
+                            </h4>
+                            
+                        </span>
+                    </section>
+                
+            </div>
+        
+      </section>
+    </article>
   
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  
+    <!-- 显示推荐文章和评论 -->
+
+
 
   
 
 
-    
   
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '60天重学算法03',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class='l_side'>
@@ -361,86 +490,27 @@
         
       
         
-      
-        
-      
-        
-      
-        
-      
-        
-          <section class='widget grid'>
-  <header class='pure'>
-  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+          
+  <section class='widget toc-wrapper'>
+    <header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
   
 </header>
 
-  <div class='content pure'>
-    <ul class="grid navgation">
-      
-        <li><a class="flat-box" title="/" href="/"
-          
-          
-          id="home">
-          
-            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
-          
-          近期文章
-        </a></li>
-      
-        <li><a class="flat-box" title="/categories/" href="/categories/"
-          
-            rel="external nofollow noopener noreferrer"
-          
-          
-            target="_self"
-          
-          id="categories">
-          
-            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
-          
-          文章分类
-        </a></li>
-      
-        <li><a class="flat-box" title="https://github.com/100824/100824.github.io" href="https://github.com/100824/100824.github.io"
-          
-          
-          id="https:github.com100824100824.github.io">
-          
-            <i class="fas fa-code-branch fa-fw" aria-hidden="true"></i>
-          
-          开源项目
-        </a></li>
-      
-    </ul>
-  </div>
-</section>
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#数组如何实现随机访问"><span class="toc-text">数组如何实现随机访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么数组要从-0-开始编号，而不是从-1-开始呢？"><span class="toc-text">为什么数组要从 0 开始编号，而不是从 1 开始呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#低效的“插入”和“删除”"><span class="toc-text">低效的“插入”和“删除”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数组的访问越界问题"><span class="toc-text">数组的访问越界问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#容器能否完全替代数组"><span class="toc-text">容器能否完全替代数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#课后思考"><span class="toc-text">课后思考</span></a></li></ol>
+    </div>
+  </section>
+
 
         
       
-    
-      
         
       
         
       
-        
-      
-        
-      
-        
-          <section class='widget text'>
-  <header class='pure'>
-  <div><i class="fas fa-file fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Who?</div>
-  
-</header>
-
-  <div class='content pure'>
-    <p>WeChat:15728877020<br>一个SRE初学者<br><img src="http://www.bbvdd.com/d/20200304022453q5r.jpeg" alt=""> 我们家两只小臭猫<br>丑丑与大头<br><img src="http://chuantu.xyz/t6/720/1582082574x989559068.jpg" alt=""></p>
-
-  </div>
-</section>
-
         
       
         
@@ -509,20 +579,6 @@
         
           
 
-        
-      
-        
-      
-        
-      
-    
-      
-        
-      
-        
-      
-        
-      
         
       
         

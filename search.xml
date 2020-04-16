@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>60天重学算法03</title>
+      <link href="/2020/04/16/02%E6%95%B0%E7%BB%84/"/>
+      <url>/2020/04/16/02%E6%95%B0%E7%BB%84/</url>
+      
+        <content type="html"><![CDATA[<h4 id="数组如何实现随机访问"><a href="#数组如何实现随机访问" class="headerlink" title="数组如何实现随机访问"></a>数组如何实现随机访问</h4><ul><li>第一是线性表,个线性表上的数据最多只有前和后两个方向,只是简单的前后关系</li><li>第二个是连续的内存空间和相同类型的数据</li><li>正是因为这两个限制，它才有了一个堪称“杀手锏”的特性：“随机访问”。但有利就有弊，这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。</li></ul><h4 id="为什么数组要从-0-开始编号，而不是从-1-开始呢？"><a href="#为什么数组要从-0-开始编号，而不是从-1-开始呢？" class="headerlink" title="为什么数组要从 0 开始编号，而不是从 1 开始呢？"></a>为什么数组要从 0 开始编号，而不是从 1 开始呢？</h4><p><img src="https://static001.geekbang.org/resource/image/98/c4/98df8e702b14096e7ee4a5141260cdc4.jpg" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[k]_address &#x3D; base_address + k * type_size</span><br><span class="line">a[k]_address &#x3D; base_address + (k-1)*type_size</span><br></pre></td></tr></table></figure><p>对比两个公式，我们不难发现，从 1 开始编号，每次随机访问数组元素都多了一次减法运算，对于 CPU 来说，就是多了一次减法指令。数组作为非常基础的数据结构，通过下标随机访问数组元素又是其非常基础的编程操作，效率的优化就要尽可能做到极致。所以为了减少一次减法操作，数组选择了从 0 开始编号，而不是从 1 开始。</p><h4 id="低效的“插入”和“删除”"><a href="#低效的“插入”和“删除”" class="headerlink" title="低效的“插入”和“删除”"></a>低效的“插入”和“删除”</h4><ul><li>插入与删除的为O(n)</li></ul><h4 id="数组的访问越界问题"><a href="#数组的访问越界问题" class="headerlink" title="数组的访问越界问题"></a>数组的访问越界问题</h4><ul><li>C语言中只要不是访问受限的内存，都可以自由访问，因此当数组越界时，系统不会报错，但是会访问到奇奇怪怪的数据，因为你不知道该地址存了什么数据。</li><li>python，java等语言就会做越界检查，当数组越界直接报错。</li></ul><h4 id="容器能否完全替代数组"><a href="#容器能否完全替代数组" class="headerlink" title="容器能否完全替代数组"></a>容器能否完全替代数组</h4><ul><li>对于业务开发，直接使用容器就足够了，省时省力。毕竟损耗一丢丢性能，完全不会影响到系统整体的性能。但如果你是做一些非常底层的开发，比如开发网络框架，性能的优化需要做到极致，这个时候数组就会优于容器，成为首选。</li></ul><h4 id="课后思考"><a href="#课后思考" class="headerlink" title="课后思考"></a>课后思考</h4><ul><li>二维数组的内存寻址公式是怎样的呢？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">对于m*n的数组的addr[i][j](i&lt;m, j&lt;n)</span><br><span class="line">address &#x3D; base_address + (i * n + j) * type_size</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 60天重学算法 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>60天重学算法02</title>
       <link href="/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/"/>
       <url>/2020/04/15/01%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</url>
